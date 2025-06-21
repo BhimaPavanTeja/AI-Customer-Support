@@ -36,7 +36,7 @@ function UploadFAQ() {
 
     try {
       setUploading(true);
-      const res = await axios.post("http://localhost:5000/faq/upload", formData, {
+      const res = await axios.post("https://ai-customer-support-dvyk.onrender.com/faq/upload", formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
