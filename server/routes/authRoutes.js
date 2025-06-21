@@ -2,11 +2,11 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
 
-const SECRET = "supersecretkey"; // Store in .env in real app
+const SECRET = process.env.JWT_SECRET;
 
 const users = [
-  { username: "admin", password: "admin123", role: "admin" },
-  { username: "user", password: "user123", role: "user" },
+  { username: "admin", password: "Admin@123", role: "admin" },
+  { username: "user", password: "User@123", role: "user" },
 ];
 
 // POST /auth/login
