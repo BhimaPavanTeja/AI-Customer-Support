@@ -23,9 +23,12 @@ function Login() {
 
       if (role === "admin") navigate("/upload");
       else navigate("/");
+      if (role === "user") navigate("/chat");
+      else navigate("/");
     } catch (err) {
       setError("Invalid credentials");
     }
+
   };
 
   return (
