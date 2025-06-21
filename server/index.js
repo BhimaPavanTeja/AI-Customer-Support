@@ -3,21 +3,20 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-const chatRoutes = require("./routes/chatRoutes");
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 // Routes
+const chatRoutes = require("./routes/chatRoutes");
 app.use("/chat", chatRoutes);
 
-app.get("/history/:userId", async (req, res) => {
-  const { userId } = req.params;
-  const convo = await Conversation.findOne({ userId });
-  if (!convo) return res.json({ messages: [] });
-  res.json({ messages: convo.messages });
-});
+const faqRoutes = require("./routes/faqRoutes");
+app.use("/faq", faqRoutes);
+
+const { authRouter } = require("./routes/authRoutes");
+app.use("/auth", authRouter);
+
 
 
 mongoose

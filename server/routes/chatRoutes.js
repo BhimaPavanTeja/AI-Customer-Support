@@ -1,9 +1,25 @@
+// server/routes/chatRoutes.js
 const express = require("express");
 const router = express.Router();
 const Conversation = require("../models/Conversation");
+const FAQ = require("../models/FAQ");
 const { getBotReply } = require("../utils/azureOpenAI");
 
-// POST /chat → Send message and get bot reply
+// Match user question to stored Q&A pairs
+async function findAnswerFromFAQ(userMessage) {
+  const faq = await FAQ.findOne().sort({ uploadedAt: -1 });
+  if (!faq) return null;
+
+  for (const { question, answer } of faq.qaPairs) {
+    if (question.toLowerCase().includes(userMessage.toLowerCase())) {
+      return answer;
+    }
+  }
+
+  return null;
+}
+
+// ✅ Chat route with FAQ check first
 router.post("/", async (req, res) => {
   const { message, userId } = req.body;
 
@@ -13,15 +29,17 @@ router.post("/", async (req, res) => {
       convo = new Conversation({ userId, messages: [] });
     }
 
-    // Add user message
     convo.messages.push({ role: "user", content: message });
 
-    // Get bot reply from Azure OpenAI
+    const matchedAnswer = await findAnswerFromFAQ(message);
+    if (matchedAnswer) {
+      convo.messages.push({ role: "assistant", content: matchedAnswer });
+      await convo.save();
+      return res.json({ reply: matchedAnswer });
+    }
+
     const reply = await getBotReply(convo.messages);
-
-    // Add assistant message
     convo.messages.push({ role: "assistant", content: reply });
-
     await convo.save();
 
     res.json({ reply });
@@ -31,7 +49,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// GET /chat/history/:userId → Get previous conversation
 router.get("/history/:userId", async (req, res) => {
   const { userId } = req.params;
   const convo = await Conversation.findOne({ userId });
