@@ -5,7 +5,6 @@ const multer = require("multer");
 const fs = require("fs");
 const pdfParse = require("pdf-parse");
 const FAQ = require("../models/FAQ");
-const { default: App } = require("../../client/src/App");
 
 const upload = multer({ dest: "uploads/" });
 
