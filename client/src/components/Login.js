@@ -38,19 +38,21 @@ function Login() {
       </h1>
       <div className="bg-white shadow-2xl rounded-2xl px-10 py-8 w-full max-w-sm">
         <div className="flex flex-col items-center mb-6">
-          <h1 className="text-2xl font-bold mb-2">AI Customer Support</h1>
+          <h1 className="text-2xl font-bold italic mb-2">AI Customer Support</h1>
           <p className="text-gray-500 text-sm mt-1">Sign in to your account</p>
         </div>
         <div className="space-y-4">
+          <label for="username" className="font-semibold">Username</label>
           <input
-            placeholder="Username"
+            placeholder="enter your username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
+          <label for="password" className="font-semibold">Password</label>
           <input
             type="password"
-            placeholder="Password"
+            placeholder="enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"

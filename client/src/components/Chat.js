@@ -41,14 +41,16 @@ const Chat = observer(() => {
 
   return (
     <div className="fixed inset-0 w-full h-full flex flex-col bg-gradient-to-br from-blue-100 to-purple-200">
+      <div className="absolute left-6 top-6 text-xl text-center font-semibold italic text-gray-700">
+        AI Customer Support
+      </div>
       <div className="max-w-2xl w-full mx-auto flex flex-col flex-1 p-4">
-        <h1 className="text-2xl font-bold mb-2">AI Customer Support</h1>
         {/* Chat Container */}
-        <nav className="absolute top-4 right-4 mb-4 space-x-4">
+        <nav className="absolute top-6 right-6 mb-6 space-x-6">
           <Link to="/history" className="text-blue-500 font-medium hover:underline">History</Link>
           <Link to="/login" className="text-red-500 font-medium hover:underline">Logout</Link>
         </nav>
-        <div className="rounded-lg max-h-[calc(100vh-150px)] flex-1 overflow-y-auto p-4 bg-white shadow-md">
+        <div className="rounded-lg max-h-[calc(100vh-100px)] flex-1 overflow-y-auto p-4 bg-white shadow-md">
           {/* Placeholder */}
           {chatStore.messages.length === 0 && !chatStore.loading && (
             <div className="text-gray-400 text-lg text-center mt-32">
