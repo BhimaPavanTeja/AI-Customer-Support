@@ -48,7 +48,7 @@ const Chat = observer(() => {
           <Link to="/history" className="text-blue-500 font-medium hover:underline">History</Link>
           <Link to="/login" className="text-red-500 font-medium hover:underline">Logout</Link>
         </nav>
-        <div className="rounded-lg flex-1 overflow-y-auto p-4 bg-white shadow-md">
+        <div className="rounded-lg max-h-[calc(100vh-150px)] flex-1 overflow-y-auto p-4 bg-white shadow-md">
           {/* Placeholder */}
           {chatStore.messages.length === 0 && !chatStore.loading && (
             <div className="text-gray-400 text-lg text-center mt-32">
