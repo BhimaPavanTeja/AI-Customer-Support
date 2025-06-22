@@ -22,9 +22,7 @@ function Login() {
       const role = payload.role;
 
       if (role === "admin") navigate("/upload");
-      else navigate("/");
-      if (role === "user") navigate("/chat");
-      else navigate("/");
+      else navigate("/chat");
     } catch (err) {
       setError("Invalid credentials");
     }
