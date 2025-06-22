@@ -8,7 +8,7 @@ A full-stack AI-powered customer support chat platform built using **React**, **
 - **Link to the app:** [https://ai-support-chat.netlify.app/login](https://ai-support-chat.netlify.app/login)
 
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend:
 - **React**
@@ -26,7 +26,7 @@ A full-stack AI-powered customer support chat platform built using **React**, **
 
 ## 🚀 Getting Started
 
-### 🖥️ Prerequisites
+### Prerequisites
 
 - Node.js v18+
 - MongoDB (local or Atlas)
