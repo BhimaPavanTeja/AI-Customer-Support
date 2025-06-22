@@ -11,7 +11,7 @@ function Login() {
   const handleLogin = async () => {
     try {
       // authenticating user with the backend
-      const res = await axios.post("https://localhost:5000/auth/login", {
+      const res = await axios.post("https://ai-customer-support-d7b5.onrender.com/auth/login", {
         username,
         password,
       });

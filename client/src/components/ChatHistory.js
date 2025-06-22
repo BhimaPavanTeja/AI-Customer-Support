@@ -15,7 +15,7 @@ function ChatHistory({ userId }) {
       return;
     }
     // Fetching chat history from the server
-    axios.get(`https://localhost:5000/chat/history/${userId}`, {
+    axios.get(`https://ai-customer-support-d7b5.onrender.com/chat/history/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

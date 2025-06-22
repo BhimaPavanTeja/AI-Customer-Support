@@ -21,7 +21,7 @@ function ViewUploads() {
     }
 
     axios
-      .get(`https://localhost:5000/faq/all`, {
+      .get(`https://ai-customer-support-d7b5.onrender.com/faq/all`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -22,7 +22,7 @@ const Chat = observer(() => {
     chatStore.setLoading(true);
 
     try {
-      const res = await axios.post("https://localhost:5000/chat", {
+      const res = await axios.post("https://ai-customer-support-d7b5.onrender.com/chat", {
         message: input,
         userId: "demoUser",
       });
