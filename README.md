@@ -1,14 +1,14 @@
-# 🤖 AI Customer Support Chat Platform
+# AI Customer Support Chat Platform
 
 A full-stack AI-powered customer support chat platform built using **React**, **Node.js**, **Express**, **MongoDB**, and **Azure OpenAI**. This application enables real-time customer support with contextual AI-generated responses based on uploaded FAQ documents.
 - used gpt-4.1 model for responses
 
-## 🌐 Live Demo
+## Project Link
 
 - **Link to the app:** [https://ai-support-chat.netlify.app/login](https://ai-support-chat.netlify.app/login)
 
 
-## 📌 Features
+## Features
 
 - 💬 Real-time chat interface with AI assistant
 - 📄 Admin upload for FAQs or company data (PDF/Text)
