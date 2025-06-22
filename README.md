@@ -5,7 +5,7 @@ A full-stack AI-powered customer support chat platform built using **React**, **
 
 ## Project Link
 
-- **Link to the app:** [https://ai-support-chat.netlify.app/login](https://ai-support-chat.netlify.app/login)
+- **Link to the app:** [https://ai-support-chat.netlify.app/login](https://ai-support-chat.netlify.app/)
 
 
 ## Tech Stack
