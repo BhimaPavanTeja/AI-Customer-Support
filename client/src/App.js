@@ -13,6 +13,7 @@ function App() {
   // Check if the user is logged in by verifying the token
 
   return (
+    <>
     <Router>
         {/* defining routes */}
         <Routes>
@@ -25,6 +26,7 @@ function App() {
         <Route path="/admin/uploads" element={<ProtectedRoute><ViewUploads /></ProtectedRoute>} />
       </Routes>
     </Router>
+    </>
   );
 }
 
