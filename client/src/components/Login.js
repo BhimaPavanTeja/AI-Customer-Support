@@ -33,6 +33,9 @@ function Login() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 to-purple-200">
+      <h1 className="absolute top-8 text-xl text-center font-semibold text-gray-700">
+        👋🏻 Welcome To Login Page
+      </h1>
       <div className="bg-white shadow-2xl rounded-2xl px-10 py-8 w-full max-w-sm">
         <div className="flex flex-col items-center mb-6">
           <h1 className="text-2xl font-bold mb-2">AI Customer Support</h1>
