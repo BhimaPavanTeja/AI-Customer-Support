@@ -19,7 +19,7 @@ async function findAnswerFromFAQ(userMessage) {
   return null;
 }
 
-// ✅ Chat route with FAQ check first
+// Chat route with FAQ check first
 router.post("/", async (req, res) => {
   const { message, userId } = req.body;
 

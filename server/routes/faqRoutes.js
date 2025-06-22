@@ -5,6 +5,7 @@ const multer = require("multer");
 const fs = require("fs");
 const pdfParse = require("pdf-parse");
 const FAQ = require("../models/FAQ");
+const { default: App } = require("../../client/src/App");
 
 const upload = multer({ dest: "uploads/" });
 
@@ -25,7 +26,7 @@ router.post("/upload", upload.single("faqFile"), async (req, res) => {
 
     fs.unlinkSync(filePath); // Clean up
 
-    // 🔍 Extract question-answer pairs
+    // Extract question-answer pairs
     const faqPairs = [];
     const regex = /\d+\.\s+(.*?)\n(.*?)(?=\n\d+\\.|$)/gs;
 
@@ -42,6 +43,18 @@ router.post("/upload", upload.single("faqFile"), async (req, res) => {
   } catch (err) {
     console.error("Upload error:", err);
     res.status(500).json({ message: "Error processing file." });
+  }
+});
+
+const { verifyToken } = require("./authRoutes");
+
+router.get("/all", verifyToken(["admin"]), async (req, res) => {
+  try {
+    const allFaqs = await FAQ.find().sort({ uploadedAt: -1 });
+    res.json({ faqs: allFaqs });
+  } catch (err) {
+    console.error("FAQ fetch error:", err);
+    res.status(500).json({ message: "Failed to load FAQs" });
   }
 });
 

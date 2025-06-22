@@ -58,6 +58,12 @@ function UploadFAQ() {
         >
           Logout
         </Link>
+        <Link
+          to="/admin/uploads"
+          className="text-blue-600 font-medium ml-4 hover:underline transition"
+        >
+          View Uploads
+        </Link>
       </nav>
       <div className="bg-white shadow-lg rounded-lg p-8 flex flex-col items-center w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">

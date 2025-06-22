@@ -10,6 +10,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
+      // authenticating user with the backend
       const res = await axios.post("https://ai-customer-support-dvyk.onrender.com/auth/login", {
         username,
         password,
@@ -21,6 +22,7 @@ function Login() {
       const payload = JSON.parse(atob(token.split(".")[1]));
       const role = payload.role;
 
+      // according to the role, navigate to different pages
       if (role === "admin") navigate("/upload");
       else navigate("/chat");
     } catch (err) {
