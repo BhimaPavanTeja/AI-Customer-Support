@@ -11,7 +11,7 @@ function Login() {
   const handleLogin = async () => {
     try {
       // authenticating user with the backend
-      const res = await axios.post("https://ai-customer-support-dvyk.onrender.com/auth/login", {
+      const res = await axios.post("https://localhost:5000/auth/login", {
         username,
         password,
       });

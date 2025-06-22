@@ -21,7 +21,7 @@ function ViewUploads() {
     }
 
     axios
-      .get(`${import.meta.env.VITE_API_URL}/faq/all`, {
+      .get(`https://localhost:5000/faq/all`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
