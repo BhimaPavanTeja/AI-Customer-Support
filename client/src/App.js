@@ -14,7 +14,6 @@ function App() {
 
   return (
     <Router>
-      <div>
         {/* defining routes */}
         <Routes>
         {/* Default path shows login or chat if already logged in */}
@@ -25,7 +24,6 @@ function App() {
         <Route path="/upload" element={<ProtectedRoute><UploadFAQ /></ProtectedRoute>} />
         <Route path="/admin/uploads" element={<ProtectedRoute><ViewUploads /></ProtectedRoute>} />
       </Routes>
-      </div>
     </Router>
   );
 }
